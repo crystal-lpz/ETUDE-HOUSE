@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETUDE-House</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+      }
+      .responsive-img {
+        width: 100%;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: start;
+      }
+      section.one {
+        background-color: #c8e4f2;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/612/original/img-category-skincare.jpg?1674163542);
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+      section.two {
+        background-color: #f295a2;
+      }
+      section.three {
+      }
+
+      section.four {
+        /* background-color: #d9b2a9; */
+      }
+      section.five {
+        background-color: #c8e4f2;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/610/original/soonjung_light_skincare__1.jpg?1674163159);
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60px;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 42px;
+        margin: 0;
+      }
+      p {
+        font-size: 25px;
+      }
+      .pic-cover {
+        display: block;
+
+        width: 40vw;
+        height: 100%;
+      }
+      .mosaic {
+        display: grid;
+        padding-right: 97px;
+      }
+      .mosaic-item-1:first-of-type {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
+        border: 10px solid white;
+      }
+      .mosaic-item-2:last-of-type {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 2;
+        margin: 0;
+        border: 10px solid white;
+      }
+
+      .grid {
+        display: grid;
+      }
+      .grid-2-col {
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+        justify-items: center;
+      }
+      .card {
+        padding: 0 80px 0 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="one">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/618/original/etude-house-logo-7A90678BB9-seeklogo.com.png?1674164415"
+          alt=""
+        />
+      </section>
+      <section class="two">
+        <h1>
+          Find your personal beauty in our fun, magical makeup world, Etude
+          House and make your sweet dreams come true
+        </h1>
+      </section>
+      <section class="three">
+        <div class="grid">
+          <div class="grid grid-2-col">
+            <div class="card">
+              <h3>ETUDE House's Mission</h3>
+              <p>
+                Makeup should be fun rather than a boring daily routine. We at
+                Etude House believe that we can create better and more exciting
+                products for our customers to find enjoyable play and
+                self-discovery for their unique beauty.
+              </p>
+            </div>
+
+            <div class="mosaic">
+              <div class="mosaic-item-1">
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/633/original/108886173_4681408181876672_8631277435690532626_n2.jpg?1674173692"
+                  class="responsive-img"
+                  alt=""
+                />
+              </div>
+              <div class="mosaic-item-2">
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/630/original/110020568_4681407805210043_1056485705516443729_n2.jpg?1674171561"
+                  class="responsive-img"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="four">
+        <div class="grid">
+          <div class="grid grid-2-col">
+            <div class="pic-cover">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/627/original/295863888_8483393325011453_5011517427415486222_n.jpg?1674168587"
+                class="responsive-img"
+                alt=""
+              />
+            </div>
+            <div class="card">
+              <h3>ETUDE House' story</h3>
+              <p>
+                Since launching in 1985 as Korea’s first specialized makeup
+                brand, Etude House has made beauty dreams comes true with fun
+                and playful products and packaging. We’ve created a culture of
+                Makeup Play in our stores to perpetuate learning and the
+                enjoyment of beauty. Our feminine and playful products
+                accentuate our belief that every woman was born a dignified
+                being and deserves to be loved. To celebrate their beauty, and
+                adventurous spirit, trend-focused, young women turn to Etude
+                House’s bright, whimsical stores for affordable bestsellers like
+                Dear My Blooming Lips-Talk, Precious Mineral Any Cushion, Play
+                101 Pencil, and Moistfull Collagen Cream. your favorite
+                products.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="five"><h1>etude house soon jung</h1></section>
+    </div>
+  </body>
+</html>
