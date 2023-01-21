@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ETUDE-House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --main-color: #f295a2;
+        --second-color: #eecfc9;
+        --main-color-transparent: #f295a2e6;
+      }
       body {
         width: 100vw;
         height: 100vh;
         margin: 0;
+        font-family: "Manrope", sans-serif;
       }
       .container {
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
       }
@@ -23,65 +34,78 @@
       }
       section {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
+        justify-self: center;
         height: 100vh;
         scroll-snap-align: start;
       }
       section.one {
         background-color: #c8e4f2;
-        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/612/original/img-category-skincare.jpg?1674163542);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.356),
+            rgba(242, 149, 161, 0.116),
+            rgba(242, 149, 161)
+          ),
+          url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/752/original/122110906_5188171487867003_4064167837724255938_n2.jpg?1674257730);
         background-size: cover;
-        background-position: right;
+        background-position: center;
         background-repeat: no-repeat;
+        justify-content: center;
+        align-items: center;
       }
       section.two {
-        background-color: #f295a2;
+        background-color: var(--main-color);
+        justify-content: center;
+        align-items: center;
       }
       section.three {
-      }
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/630/original/110020568_4681407805210043_1056485705516443729_n2.jpg?1674171561);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        justify-content: right;
 
+        align-items: center;
+      }
       section.four {
-        /* background-color: #d9b2a9; */
+        background-color: #eecfc9;
       }
       section.five {
-        background-color: #c8e4f2;
-        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/610/original/soonjung_light_skincare__1.jpg?1674163159);
-        background-position: right;
-        background-repeat: no-repeat;
+        background-color: var(--main-color);
       }
       h1 {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Manrope", sans-serif;
+        font-size: 60px;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+
+        color: white;
+      }
+      h2 {
         font-size: 60px;
         text-align: center;
       }
-
       h3 {
         font-size: 42px;
         margin: 0;
+        color: white;
       }
       p {
         font-size: 25px;
+        color: white;
       }
-      .pic-cover {
-        display: block;
 
-        width: 40vw;
-        height: 100%;
-      }
       .mosaic {
         display: grid;
-        padding-right: 97px;
       }
       .mosaic-item-1:first-of-type {
-        grid-column: 1 / span 2;
-        grid-row: 2 / span 2;
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 2;
         border: 10px solid white;
       }
       .mosaic-item-2:last-of-type {
-        grid-column: 2 / span 2;
-        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
         margin: 0;
         border: 10px solid white;
       }
@@ -91,12 +115,38 @@
       }
       .grid-2-col {
         grid-template-columns: 1fr 1fr;
-
+      }
+      .grid-3-col {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
         align-items: center;
         justify-items: center;
       }
+
+      .grid-overlap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-self: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .grid-content,
+      .grid-img {
+        grid-row: 1/2;
+      }
+      .grid-img {
+        grid-column: 2/-1;
+        max-width: 900px;
+      }
+      .grid-content {
+        grid-column: 1/3;
+        align-self: center;
+      }
       .card {
-        padding: 0 80px 0 80px;
+        max-width: 600px;
+        padding: 90px 90px;
+        margin-right: 100px;
+        background-color: var(--main-color-transparent);
       }
     </style>
   </head>
@@ -111,72 +161,70 @@
       <section class="two">
         <h1>
           Find your personal beauty in our fun, magical makeup world, Etude
-          House and make your sweet dreams come true
+          House and make your sweet dreams come true.
         </h1>
       </section>
       <section class="three">
-        <div class="grid">
-          <div class="grid grid-2-col">
-            <div class="card">
-              <h3>ETUDE House's Mission</h3>
-              <p>
-                Makeup should be fun rather than a boring daily routine. We at
-                Etude House believe that we can create better and more exciting
-                products for our customers to find enjoyable play and
-                self-discovery for their unique beauty.
-              </p>
-            </div>
-
-            <div class="mosaic">
-              <div class="mosaic-item-1">
-                <img
-                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/633/original/108886173_4681408181876672_8631277435690532626_n2.jpg?1674173692"
-                  class="responsive-img"
-                  alt=""
-                />
-              </div>
-              <div class="mosaic-item-2">
-                <img
-                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/630/original/110020568_4681407805210043_1056485705516443729_n2.jpg?1674171561"
-                  class="responsive-img"
-                  alt=""
-                />
-              </div>
-            </div>
+        <div class="right">
+          <div class="card">
+            <h3>ETUDE House's Mission</h3>
+            <p>
+              Makeup should be fun rather than a boring daily routine. We at
+              Etude House believe that we can create better and more exciting
+              products for our customers to find enjoyable play and
+              self-discovery for their unique beauty.
+            </p>
           </div>
         </div>
       </section>
       <section class="four">
-        <div class="grid">
-          <div class="grid grid-2-col">
-            <div class="pic-cover">
-              <img
-                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/627/original/295863888_8483393325011453_5011517427415486222_n.jpg?1674168587"
-                class="responsive-img"
-                alt=""
-              />
-            </div>
-            <div class="card">
-              <h3>ETUDE House' story</h3>
-              <p>
-                Since launching in 1985 as Korea’s first specialized makeup
-                brand, Etude House has made beauty dreams comes true with fun
-                and playful products and packaging. We’ve created a culture of
-                Makeup Play in our stores to perpetuate learning and the
-                enjoyment of beauty. Our feminine and playful products
-                accentuate our belief that every woman was born a dignified
-                being and deserves to be loved. To celebrate their beauty, and
-                adventurous spirit, trend-focused, young women turn to Etude
-                House’s bright, whimsical stores for affordable bestsellers like
-                Dear My Blooming Lips-Talk, Precious Mineral Any Cushion, Play
-                101 Pencil, and Moistfull Collagen Cream. your favorite
-                products.
-              </p>
-            </div>
+        <div class="grid-overlap">
+          <div class="grid-img">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/627/original/295863888_8483393325011453_5011517427415486222_n.jpg?1674168587"
+              class="responsive-img"
+              alt=""
+            />
+          </div>
+          <div class="card grid-content">
+            <h3>ETUDE House' story</h3>
+            <p>
+              Since launching in 1985 as Korea’s first specialized makeup brand,
+              Etude House has made beauty dreams comes true with fun and playful
+              products and packaging. We’ve created a culture of Makeup Play in
+              our stores to perpetuate learning and the enjoyment of beauty. Our
+              feminine and playful products accentuate our belief that every
+              woman was born a dignified being and deserves to be loved.
+            </p>
           </div>
         </div>
       </section>
-      <section class="five"><h1>etude house soon jung</h1></section>
+      <section class="five">
+        <h2>Top three favorite items</h2>
+        <div class="grid grid-3-col">
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/758/original/etude-house-soon-jung-2x-barrier-intensive-cream-449.jpg?1674258960"
+              class="responsive-img"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/750/original/650011595__dear_darling_water_tint_1.jpg?1674257437"
+              class="responsive-img"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/753/original/651000155__heart_cookie_blusher.jpg?1674257950"
+              class="responsive-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
