@@ -63,6 +63,7 @@
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: cover;
+        background-attachment: fixed;
         justify-content: right;
         align-items: center;
       }
@@ -70,14 +71,16 @@
         background-color: #eecfc9;
       }
       section.five {
-        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/186/original/110020568_4681407805210043_1056485705516443729_n22.jpg?1674519002);
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/748/original/650000014845__set_kazuha_makeup_look_2pcs_free_gift_included_.jpg?1674257044);
         background-position: right;
+        background-size: cover;
         background-repeat: no-repeat;
-
-        /* filter: blur(6px); */
-        justify-content: center;
+        background-attachment: fixed;
+        justify-content: left;
         align-items: center;
-        padding: 2rem;
+      }
+      section.five .card {
+        margin-left: 100px;
       }
       section.topThree {
         background-color: var(--second-color);
@@ -92,7 +95,6 @@
         text-align: center;
         margin-left: 50px;
         margin-right: 50px;
-
         color: white;
       }
       h2 {
@@ -104,8 +106,15 @@
         margin: 0;
         color: white;
       }
+      h4 {
+        font-family: "Manrope", sans-serif;
+        color: white;
+        font-size: 171px;
+        margin: 28px 0px;
+      }
       p {
         font-size: 25px;
+        margin: 12px 0 39px 0;
         color: white;
       }
 
@@ -149,7 +158,8 @@
       .grid-content,
       .grid-img,
       .grid-content-2,
-      .grid-img-2 {
+      .grid-img-2,
+      .grid-overlap-number {
         grid-row: 1/2;
       }
       .grid-img {
@@ -171,15 +181,58 @@
         align-self: center;
       }
       .grid-content-2,
-      .grid-img-2 {
+      .grid-img-2,
+      .grid-overlap-number-2 {
         grid-row: 1/2;
+      }
+      .grid-overlap-number-2 {
+        display: flex;
+        align-items: flex-start;
+        grid-column: 2/-1;
+      }
+      .grid-overlap-number {
+        display: flex;
+        align-items: flex-start;
+        grid-column: 3/1;
       }
       .card {
         max-width: 600px;
-        padding: 90px 90px;
-        margin-right: 100px;
+        padding: 70px 60px;
         border-radius: 15px;
         background-color: var(--main-color-transparent);
+      }
+      .card.mr {
+        margin-right: 100px;
+      }
+      .card.pt {
+        padding-top: 54px;
+      }
+      .btn {
+        padding: 20px 20px;
+      }
+      .btn.btn-main {
+        background-color: white;
+        color: var(--main-color);
+        font-size: 17px;
+        margin-top: 30px;
+        border-radius: 10px;
+        font-weight: bold;
+        border: 3px solid white;
+      }
+      .btn.btn-main:hover {
+        background-color: var(--main-color);
+        border: 3px solid white;
+        color: white;
+        transition: all 0.5ms ease-out;
+      }
+      a.btn.btn-main {
+        text-decoration: none;
+      }
+      .mt {
+        margin-top: 77px;
+      }
+      .mt-1 {
+        margin-top: 31px;
       }
 
       .img-border {
@@ -203,7 +256,7 @@
       </section>
       <section class="three">
         <div class="right">
-          <div class="card">
+          <div class="card mr">
             <h3>ETUDE House's Mission</h3>
             <p>
               Makeup should be fun rather than a boring daily routine. We at
@@ -238,7 +291,11 @@
         </div>
       </section>
 
-      <section class="five"></section>
+      <section class="five">
+        <div class="card">
+          <h3>My Top Three Favorite Products</h3>
+        </div>
+      </section>
       <section class="topThree">
         <div class="grid-overlap">
           <div class="grid-img">
@@ -249,7 +306,7 @@
             />
           </div>
 
-          <div class="card grid-content">
+          <div class="card pt mt grid-content">
             <h3>SoonJung 2x Barrier Intensive Cream</h3>
             <p>
               Etude House SoonJung 2x Barrier Intensive Cream uses 93% naturally
@@ -259,6 +316,15 @@
               parabens, this cream will strengthen skin barrier and bring your
               skin back to health.
             </p>
+            <a
+              href="https://www.etude.com/int/en/index.php/collections/soonjung/soonjung-2x-barrier-intensive-cream-60ml.html"
+              target="_blank"
+              class="btn btn-main"
+              >Read More</a
+            >
+          </div>
+          <div class="grid-overlap-number">
+            <h4>1</h4>
           </div>
         </div>
       </section>
@@ -266,19 +332,32 @@
         <div class="grid-overlap">
           <div class="grid-img-2">
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/171/original/650011595__dear_darling_water_tint.jpg?1674510743"
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/329/original/650011597__dear_darling_water_gel_tint.jpg?1674603031"
               width="90%"
               alt=""
             />
           </div>
 
-          <div class="card grid-content-2">
-            <h3>Etude House's Dear Darling Lip Tint</h3>
+          <div class="card pt mt grid-content-2">
+            <h3>Dear Darling Water Gel Tint</h3>
             <p>
-              Etude House's Dear Darling Lip Tint still gives lips a sexy and
-              sweet tint available in shades of cherry, orange and strawberry,
-              making it look thoroughly kissable and soft.
+              Simpler, sleeker and better! Our Dear Darling Water Gel Tint is
+              back and better than ever! Improved smarter and simpler design,
+              the lengthened entrance of the container allows for more product
+              as well as prevents any product leakage. With Pomegranate and
+              Soapberry extract, this tint will keep your lips hydrated and
+              moisturized – Use this tint for natural and juicy looking lips for
+              hours on end
             </p>
+            <a
+              href="https://www.etude.com/int/en/index.php/lips/lip-tint/dear-darling-water-gel-tint-19ad.html"
+              target="_blank"
+              class="btn btn-main"
+              >Read More</a
+            >
+          </div>
+          <div class="grid-overlap-number-2">
+            <h4>2</h4>
           </div>
         </div>
       </section>
@@ -287,12 +366,12 @@
           <div class="grid-img">
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/181/original/a4339065d2a3d16f5d83b5aefc5dd34d.jpg?1674516653"
-              width="90%"
+              width="100%"
               alt=""
             />
           </div>
 
-          <div class="card grid-content">
+          <div class="card pt mt-1 grid-content">
             <h3>Heart Cookie Blusher</h3>
             <p>
               This blusher is richly-pigmented for intense color payoff. It can
@@ -301,6 +380,15 @@
               throughout the day, and for a long-lasting finish. The included
               puff allows even application of powder with minimal irritation.
             </p>
+            <a
+              href="https://www.etude.com/int/en/index.php/face/blusher/heart-cookie-blusher.html"
+              target="_blank"
+              class="btn btn-main"
+              >Read More</a
+            >
+          </div>
+          <div class="grid-overlap-number">
+            <h4>3</h4>
           </div>
         </div>
       </section>
