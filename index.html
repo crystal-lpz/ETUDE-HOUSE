@@ -14,7 +14,7 @@
     <style>
       :root {
         --main-color: #f295a2;
-        --second-color: #eecfc9;
+        --second-color: #f5dfe0;
         --third-color: #bbe5f1;
         --main-color-transparent: #f295a2e6;
       }
@@ -24,6 +24,57 @@
         margin: 0;
         font-family: "Manrope", sans-serif;
         background-color: var(--main-color);
+      }
+      header {
+        margin: 0 0 0 137px;
+      }
+      header img {
+        width: 70px;
+      }
+      header ul {
+        display: flex;
+        align-items: center;
+      }
+
+      nav ul {
+        margin-top: 50px;
+      }
+      nav li {
+        display: inline;
+        list-style: none;
+        text-decoration: none;
+        line-height: 50px;
+        margin-right: 43px;
+        color: white;
+        font-size: 20px;
+        font-family: "Questrial", sans-serif;
+      }
+      nav li:hover {
+        color: var(--main-color);
+      }
+      nav a {
+        text-decoration: none;
+      }
+
+      header h1 {
+        color: white;
+        font-size: 148px;
+        text-decoration: none;
+        text-align: left;
+        letter-spacing: 5px;
+        line-height: 161px;
+        margin-bottom: 34px;
+      }
+
+      header h2 {
+        font-size: 25px;
+        margin-top: 0;
+        margin-left: 50px;
+        padding-top: 0;
+        padding-right: 500px;
+        line-height: 30px;
+        color: white;
+        opacity: 70%;
       }
       .container {
         width: 100%;
@@ -38,20 +89,20 @@
         display: flex;
         justify-self: center;
         height: 100vh;
+        width: 99vw;
         scroll-snap-align: start;
+        margin: 0;
       }
       section.one {
-        background-color: #c8e4f2;
+        background-color: #dbd7cc;
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.356),
             rgba(0, 0, 0, 0.356)
           ),
           url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/752/original/122110906_5188171487867003_4064167837724255938_n2.jpg?1674257730);
-        background-size: cover;
-        background-position: center;
+
+        background-position: right;
         background-repeat: no-repeat;
-        justify-content: center;
-        align-items: center;
       }
       section.two {
         background-color: var(--main-color);
@@ -68,15 +119,11 @@
         align-items: center;
       }
       section.four {
-        background-color: #eecfc9;
+        background-color: var(--second-color);
       }
       section.five {
-        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/748/original/650000014845__set_kazuha_makeup_look_2pcs_free_gift_included_.jpg?1674257044);
-        background-position: right;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        justify-content: left;
+        background-color: var(--second-color);
+        justify-content: center;
         align-items: center;
       }
       section.five .card {
@@ -99,7 +146,8 @@
       }
       h2 {
         font-size: 60px;
-        text-align: center;
+        text-align: left;
+        color: var(--main-color);
       }
       h3 {
         font-size: 42px;
@@ -112,26 +160,58 @@
         font-size: 171px;
         margin: 28px 0px;
       }
+      h6 {
+        color: white;
+      }
       p {
         font-size: 25px;
         margin: 12px 0 39px 0;
         color: white;
       }
+      span.main-color {
+        color: var(--main-color);
+      }
+      span.second-color {
+        color: var(--second-color);
+      }
+      /* Java */
+      .fade-in {
+        opacity: 0;
+        transition: opacity 250ms ease-in;
+      }
 
-      .mosaic {
-        margin-bottom: 2rem;
-        display: grid;
-        grid-template-rows: 1fr;
+      .fade-in.appear {
+        opacity: 1;
       }
-      .mosaic-item:first-of-type {
-        grid-column: 2 / span 2;
-        grid-row: 1 / span 2;
+
+      .from-left {
+        grid-column: 2 / 3;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
       }
-      .mosaic-item:last-of-type {
-        grid-column: 1 / span 2;
-        grid-row: 2 / span 2;
-        margin: 0;
+
+      .from-right {
+        grid-column: 3 / 4;
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%);
       }
+
+      .from-left,
+      .from-right {
+        transition: opacity 250ms ease-in, -webkit-transform 400ms ease-in;
+        transition: opacity 250ms ease-in, transform 400ms ease-in;
+        transition: opacity 250ms ease-in, transform 400ms ease-in,
+          -webkit-transform 400ms ease-in;
+        opacity: 0;
+      }
+
+      .from-left.appear,
+      .from-right.appear {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+      }
+      /*  */
 
       .grid {
         display: grid;
@@ -139,6 +219,8 @@
 
       .grid-2-col {
         grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
       }
       .grid-3-col {
         grid-template-columns: 1fr 1fr 1fr;
@@ -238,26 +320,124 @@
       .img-border {
         box-shadow: 19px 18px 1px var(--main-color);
       }
+      .img-border-left {
+        box-shadow: -19px 18px 1px var(--main-color);
+      }
+      footer {
+        color: white;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.527),
+            rgba(0, 0, 0, 0.527)
+          ),
+          url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/741/original/269600450_7335855269765270_5402612427189300084_n.jpg?1674253121);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        justify-items: center;
+        padding: 100px 80px 0 80px;
+      }
+
+      .grid-footer {
+        grid-template-columns: 1fr 2fr 2fr;
+        align-items: baseline;
+        gap: 30px;
+      }
+
+      footer h3 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.5;
+      }
+      footer p {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 29px;
+        color: white;
+        opacity: 0.7;
+      }
+      footer ul {
+        padding: 0;
+      }
+      footer li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      footer a {
+        color: var(--main-color);
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 27px;
+        text-decoration: none;
+        opacity: 0.7;
+      }
+      footer a.links {
+        opacity: 100%;
+        color: var(--second-color);
+      }
+      footer a.links:hover {
+        text-decoration: underline;
+      }
+      footer img {
+        display: flex;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        width: 20%;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <section class="one">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/618/original/etude-house-logo-7A90678BB9-seeklogo.com.png?1674164415"
-          alt=""
-        />
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/618/original/etude-house-logo-7A90678BB9-seeklogo.com.png?1674164415"
+                  class="logo"
+                  alt="Etude-House"
+                  title="Home Page"
+                />
+              </li>
+              <a href="/index.html">
+                <li>Home</li>
+              </a>
+
+              <a href="#mission">
+                <li>Mission</li>
+              </a>
+              <a href="#story">
+                <li>Story</li>
+              </a>
+              <a href="#favorite">
+                <li>Favorite Products</li>
+              </a>
+            </ul>
+          </nav>
+
+          <h1 class="fade-in">
+            Play <span class="main-color">Pink</span>, <br />
+            Play <span class="second-color">ETUDE</span>
+          </h1>
+          <h2>
+            ETUDE is a friend for anyone who dreams of sweet moments in their
+            lives.
+          </h2>
+        </header>
       </section>
+
       <section class="two">
-        <h1>
+        <h1 class="fade-in">
           Find your personal beauty in our fun, magical makeup world, Etude
           House and make your sweet dreams come true.
         </h1>
       </section>
-      <section class="three">
+      <section class="three" id="mission">
         <div class="right">
-          <div class="card mr">
-            <h3>ETUDE House's Mission</h3>
+          <div class="card mr slide-in from-right">
+            <h3>ETUDE House Mission</h3>
             <p>
               Makeup should be fun rather than a boring daily routine. We at
               Etude House believe that we can create better and more exciting
@@ -267,7 +447,7 @@
           </div>
         </div>
       </section>
-      <section class="four">
+      <section class="four" id="story">
         <div class="grid-overlap">
           <div class="grid-img">
             <img
@@ -277,8 +457,8 @@
               alt=""
             />
           </div>
-          <div class="card grid-content">
-            <h3>ETUDE House' story</h3>
+          <div class="card grid-content slide-in from-left">
+            <h3>ETUDE House story</h3>
             <p>
               Since launching in 1985 as Korea’s first specialized makeup brand,
               Etude House has made beauty dreams comes true with fun and playful
@@ -291,9 +471,16 @@
         </div>
       </section>
 
-      <section class="five">
-        <div class="card">
-          <h3>My Top Three Favorite Products</h3>
+      <section class="five" id="favorite">
+        <div class="fade-in">
+          <h2>
+            My Top 3 <br />Favorite Products<br />
+            from ETUDE House
+          </h2>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/488/original/giphy.gif?1674689619"
+            alt=""
+          />
         </div>
       </section>
       <section class="topThree">
@@ -302,11 +489,12 @@
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/758/original/etude-house-soon-jung-2x-barrier-intensive-cream-449.jpg?1674258960"
               width="90%"
+              class="img-border"
               alt=""
             />
           </div>
 
-          <div class="card pt mt grid-content">
+          <div class="card pt mt grid-content slide-in from-left">
             <h3>SoonJung 2x Barrier Intensive Cream</h3>
             <p>
               Etude House SoonJung 2x Barrier Intensive Cream uses 93% naturally
@@ -323,7 +511,7 @@
               >Read More</a
             >
           </div>
-          <div class="grid-overlap-number">
+          <div class="grid-overlap-number slide-in from-left">
             <h4>1</h4>
           </div>
         </div>
@@ -334,11 +522,12 @@
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/329/original/650011597__dear_darling_water_gel_tint.jpg?1674603031"
               width="90%"
+              class="img-border-left"
               alt=""
             />
           </div>
 
-          <div class="card pt mt grid-content-2">
+          <div class="card pt mt grid-content-2 slide-in from-right">
             <h3>Dear Darling Water Gel Tint</h3>
             <p>
               Simpler, sleeker and better! Our Dear Darling Water Gel Tint is
@@ -356,7 +545,7 @@
               >Read More</a
             >
           </div>
-          <div class="grid-overlap-number-2">
+          <div class="grid-overlap-number-2 slide-in from-right">
             <h4>2</h4>
           </div>
         </div>
@@ -367,11 +556,12 @@
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/181/original/a4339065d2a3d16f5d83b5aefc5dd34d.jpg?1674516653"
               width="100%"
+              class="img-border"
               alt=""
             />
           </div>
 
-          <div class="card pt mt-1 grid-content">
+          <div class="card pt mt-1 grid-content slide-in from-left">
             <h3>Heart Cookie Blusher</h3>
             <p>
               This blusher is richly-pigmented for intense color payoff. It can
@@ -387,11 +577,150 @@
               >Read More</a
             >
           </div>
-          <div class="grid-overlap-number">
+          <div class="grid-overlap-number slide-in from-left">
             <h4>3</h4>
           </div>
         </div>
       </section>
+      <section class="seven">
+        <div class="grid grid-2-col">
+          <div class="card pt mt-1">
+            <h3>About the Author</h3>
+            <p>
+              Hi I'm Crystal Lopez Frontend Developer, based in the Central
+              Valley. Graduated from California State University, Stanislaus
+              with a BA in Art. I chose Etude House as my subject for the Beauty
+              Brand Landing Page Challenge for SheCodes.
+            </p>
+            <p>
+              Don't forget to leave your vote if you liked my lading page! Thank
+              You :)
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/489/original/Untitled_Artwork_%2821%29.png?1674690235"
+              width="80%"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <footer>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/618/original/etude-house-logo-7A90678BB9-seeklogo.com.png?1674164415"
+            class="footerLogo"
+            alt=""
+          />
+          <div class="grid grid-footer">
+            <div>
+              <h3>More ETUDE House</h3>
+
+              <ul>
+                <li>
+                  <a
+                    href="https://www.etude.com/int/en/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Etude Website</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/etudeofficial.global/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Etude's Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@etude_official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Etude's Tiktok</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/etudeglobal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Etude's FaceBook</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>About Me</h3>
+              <p>
+                Hi! My name is Crystal lopez and I'm an inspiring front-end
+                developer. I chose Etude House as my subject for the Beauty
+                Brand Landing Page Challenge for SheCodes. This project was
+                created by
+                <a
+                  href="https://www.crystallpzcodes.com/"
+                  target="_blank"
+                  class="links"
+                  >Crystal Lopez</a
+                >
+                and it's
+                <a
+                  href="https://github.com/crystal-lpz/ETUDE-HOUSE.git"
+                  class="links"
+                  target="_blank"
+                  >opened sourced.</a
+                >
+              </p>
+            </div>
+            <div>
+              <h3>About Etude House</h3>
+              <p>
+                We at Etude House believe that we can create better and more
+                exciting products for our customers to find enjoyable play and
+                self-discovery for their unique beauty.
+              </p>
+            </div>
+          </div>
+          <h6>
+            Developed by Crystal Lopez for SheCodes February 2023 "Beauty Brand
+            Landing Page Challenge"
+          </h6>
+        </footer>
+      </section>
     </div>
+    <script>
+      const faders = document.querySelectorAll(".fade-in");
+      const sliders = document.querySelectorAll(".slide-in");
+
+      const appearOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px -450px 0px",
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+
+      sliders.forEach((slider) => {
+        appearOnScroll.observe(slider);
+      });
+    </script>
   </body>
 </html>
