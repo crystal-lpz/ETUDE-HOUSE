@@ -50,6 +50,7 @@
         font-size: 20px;
         font-family: "Questrial", sans-serif;
       }
+
       nav li:hover {
         color: var(--main-color);
       }
@@ -91,7 +92,7 @@
       }
       .fade-in {
         opacity: 0;
-        transition: opacity 250ms ease-in;
+        transition: opacity 850ms ease-in;
       }
 
       .fade-in.appear {
@@ -134,9 +135,17 @@
         margin: 0 auto;
       }
       section.photo-grid {
+        flex-direction: column;
         justify-content: right;
         justify-items: center;
         align-items: center;
+      }
+      section.photo-grid h2 {
+        font-size: 40px;
+        margin-top: 65px;
+      }
+      section.photo-grid a:hover {
+        filter: contrast(80%);
       }
       section.four {
         margin: 0 auto;
@@ -156,6 +165,10 @@
       }
       section.seven {
         background-color: var(--main-color);
+      }
+
+      .author {
+        margin: 0px 139px;
       }
 
       h1 {
@@ -179,13 +192,14 @@
       }
       h4 {
         font-family: "Manrope", sans-serif;
-        color: white;
+        color: #ef426f;
         font-size: 171px;
         margin: 28px 0px;
       }
       h4.two {
         margin: 90px 0px;
       }
+
       h6 {
         font-size: 15px;
       }
@@ -230,7 +244,7 @@
       }
 
       .grid-4-col {
-        margin: 100px 270px;
+        margin: 0px 270px 50px 270px;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
       }
@@ -451,6 +465,20 @@
           background-position: left;
           background-repeat: no-repeat;
         }
+        section.photo-grid h2 {
+          display: none;
+        }
+        section.seven {
+          justify-items: center;
+        }
+        section.seven img {
+          display: block;
+          margin: 0 auto;
+          width: 40%;
+        }
+        .author {
+          margin-bottom: 30px;
+        }
         .four.card {
           justify-content: right;
         }
@@ -534,6 +562,9 @@
         .btn.btn-main {
           font-size: 16px;
         }
+        .mt {
+          margin-top: 0px;
+        }
       }
     </style>
   </head>
@@ -567,7 +598,7 @@
             </ul>
           </nav>
 
-          <h1>
+          <h1 class="fade-in">
             Play <span class="main-color">Pink</span>, <br />
             Play <span class="second-color">ETUDE</span>
           </h1>
@@ -579,7 +610,7 @@
       </section>
 
       <section class="two">
-        <h1>
+        <h1 class="fade-in">
           Find your personal beauty in our fun, magical makeup world, Etude
           House and make your sweet dreams come true.
         </h1>
@@ -587,7 +618,7 @@
       <section class="three" id="mission">
         <div class="right">
           <div class="card mr">
-            <h3>ETUDE House Mission</h3>
+            <h3>ETUDE's Mission</h3>
             <p>
               Makeup should be fun rather than a boring daily routine. We at
               Etude House believe that we can create better and more exciting
@@ -598,42 +629,78 @@
         </div>
       </section>
       <section class="photo-grid">
+        <h2>Follow Etude On Instagram</h2>
         <div class="grid grid-4-col">
           <div class="photo grid-4-col-span-2">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/748/original/650000014845__set_kazuha_makeup_look_2pcs_free_gift_included_.jpg?1674257044"
-              class="responsive-img"
-              alt=""
-            />
+            <a
+              href="https://www.instagram.com/p/CkpH85xJqMu/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagramPost"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/748/original/650000014845__set_kazuha_makeup_look_2pcs_free_gift_included_.jpg?1674257044"
+                class="responsive-img"
+                alt=""
+              />
+            </a>
           </div>
           <div class="photo">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/632/original/188548874_6215803511770457_5996137213932520134_n.jpg?1674172961"
-              class="responsive-img"
-              alt=""
-            />
+            <a
+              href="https://www.instagram.com/p/CPPYHCkj6J-/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagramPost"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/632/original/188548874_6215803511770457_5996137213932520134_n.jpg?1674172961"
+                class="responsive-img"
+                alt=""
+              />
+            </a>
           </div>
 
           <div class="photo">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/592/original/297283873_8510891442261641_949528269226280306_n.jpg?1674767793"
-              class="responsive-img"
-              alt=""
-            />
+            <a
+              href="https://www.instagram.com/p/CgvyUh0LcrJ/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagramPost"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/592/original/297283873_8510891442261641_949528269226280306_n.jpg?1674767793"
+                class="responsive-img"
+                alt=""
+              />
+            </a>
           </div>
           <div class="photo">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/598/original/300096430_8592487057435412_6888562844320246637_n.jpg?1674772255"
-              class="responsive-img"
-              alt=""
-            />
+            <a
+              href="https://www.instagram.com/p/ChbW-VErL61/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagramPost"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/598/original/300096430_8592487057435412_6888562844320246637_n.jpg?1674772255"
+                class="responsive-img"
+                alt=""
+              />
+            </a>
           </div>
           <div class="photo">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/599/original/297339446_8510891438928308_7882199049379559179_n.jpg?1674774341"
-              class="responsive-img"
-              alt=""
-            />
+            <a
+              href="https://www.instagram.com/tv/CfS_UM8DxnL/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagramPost"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/599/original/297339446_8510891438928308_7882199049379559179_n.jpg?1674774341"
+                class="responsive-img"
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </section>
@@ -648,7 +715,7 @@
             />
           </div>
           <div class="card grid-content slide-in from-left">
-            <h3>ETUDE House story</h3>
+            <h3>ETUDE's story</h3>
             <p>
               Since launching in 1985 as Korea’s first specialized makeup brand,
               Etude House has made beauty dreams comes true with fun and playful
@@ -673,7 +740,7 @@
           />
         </div>
       </section>
-      <section class="topThree">
+      <section class="topThree fade-in">
         <div class="grid-overlap">
           <div class="grid-img">
             <img
@@ -706,7 +773,7 @@
           </div>
         </div>
       </section>
-      <section class="topThree">
+      <section class="topThree fade-in">
         <div class="grid-overlap">
           <div class="grid-img-2">
             <img
@@ -736,7 +803,7 @@
           </div>
         </div>
       </section>
-      <section class="topThree">
+      <section class="topThree fade-in">
         <div class="grid-overlap">
           <div class="grid-img">
             <img
@@ -770,7 +837,7 @@
       </section>
       <section class="seven">
         <div class="grid grid-2-col">
-          <div class="card pt mt-1">
+          <div class="author">
             <h3>About the Author</h3>
             <p>
               Hi I'm Crystal Lopez Frontend Developer, based in the Central
@@ -783,10 +850,11 @@
               You :)
             </p>
           </div>
+
           <div>
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/489/original/Untitled_Artwork_%2821%29.png?1674690235"
-              width="80%"
+              width="70%"
               alt=""
             />
           </div>
